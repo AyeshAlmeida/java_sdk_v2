@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.slf4j.event.Level;
 
 import javax.servlet.http.HttpServletRequest;
+import java.net.URI;
 
 /**
  * Created by ayesh on 3/30/17.
@@ -22,6 +23,9 @@ public class MobileConnectWebInterfaceMock implements WebInterfaceStrategy
                                                 String msisdn,
                                                 String mcc,
                                                 String mnc,
+                                                String clientId,
+                                                String clientSecret,
+                                                URI redirectUri,
                                                 boolean shouldProxyCookies,
                                                 MobileConnectRequestOptions options)
     {
@@ -43,7 +47,13 @@ public class MobileConnectWebInterfaceMock implements WebInterfaceStrategy
                 "Running attemptDiscovery for msisdn={}, mcc={}, mnc={}, shouldProxyCookies={}, clientIp={}",
                 LogUtils.mask(msisdn, LOGGER, Level.DEBUG), mcc, mnc, shouldProxyCookies, clientIp);
 
+        final MobileConnectConfig mobileConnectConfig = new MobileConnectConfig.Builder().
+                withClientId(clientId).
+                withClientSecret(clientSecret).
+                withRedirectUrl(redirectUri).build();
 
+        final MobileConnectStatus mobileConnectStatus = MobileConnectInterfaceHelperMock.
+                attemptDiscovery(null, msisdn, mcc, mnc, cookies, mobileConnectConfig, builder);
 
         return null;
     }
