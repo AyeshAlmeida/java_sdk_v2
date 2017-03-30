@@ -1,0 +1,68 @@
+{
+  ttl=null,
+  responseCode=200,
+  headers=[
+    KeyValuePair(key=Server,
+    value=nginx/1.9.9),
+    KeyValuePair(key=Date,
+    value=Thu,
+    30Mar201713: 11: 16GMT),
+    KeyValuePair(key=Content-Type,
+    value=application/json),
+    KeyValuePair(key=Content-Length,
+    value=1175),
+    KeyValuePair(key=Connection,
+    value=keep-alive),
+    KeyValuePair(key=pragma,
+    value=no-cache),
+    KeyValuePair(key=cache-control,
+    value=no-store),
+    KeyValuePair(key=x-powered-by,
+    value=Zoetrope(https: //zoetrope.io)),
+    KeyValuePair(key=set-cookie,
+    value=Most-Recent-Selected-Operator-Expiry=2017-04-06T13: 11: 16.788344;HttpOnly;Max-Age=604800),
+    KeyValuePair(key=set-cookie,
+    value=Most-Recent-Selected-Operator=58d01793bba12f01c019b17a;HttpOnly;Max-Age=604800)
+  ],
+  errorResponse=null,
+  responseData=DiscoveryResponseData{
+    ttl=1490964076,
+    error='null',
+    description='null',
+    links=[
+      Link{
+        href='https://operator-a.sandbox.mobileconnect.io/oidc/authorize',
+        rel='authorization'
+      },
+      Link{
+        href='https://operator-a.sandbox.mobileconnect.io/oidc/accesstoken',
+        rel='token'
+      },
+      Link{
+        href='https://operator-a.sandbox.mobileconnect.io/oidc/userinfo',
+        rel='userinfo'
+      },
+      Link{
+        href='openid profile email',
+        rel='scope'
+      }
+    ],
+    response=com.gsma.mobileconnect.r2.json.Response@43b68dd1,
+    subscriberId='73a4b9daa76f11c5000bcd0ccb16b87215ead12baacc495d52df8e264fcfbc0b4de32118783aa11fd80670c852900d2cd0322f84552b23758be8914e1219527fbb04a5890656d287d80857d00517a554fcbf35a2daf8912c42ccf836ec09efcd14ce68889ada22b4c6aa0895ada31c547c388530d7eaa1d4bd9e234c0df1480c57d4223cfee760c80d97492ad9d26d0e37a064dc3756a4ef7a45d649622298f48a9803fb5a77aec310d33a85678f74fc4b5fd67a06696a2167ab871f6ba9ed4f113f7ca0a7882073cb76223361d3a5d73d690a2609b60313235d64ac84e80927d4a6cf8da244d439a0487a095512182a810c56a1823e8be676c40659adf84e1b',
+    clientName='null'
+  },
+  operatorUrls=OperatorUrls{
+    authorizationUrl='https://operator-a.sandbox.mobileconnect.io/oidc/authorize',
+    requestTokenUrl='https://operator-a.sandbox.mobileconnect.io/oidc/accesstoken',
+    userInfoUrl='https://operator-a.sandbox.mobileconnect.io/oidc/userinfo',
+    premiumInfoUri='null',
+    jwksUri='null',
+    revokeTokenUrl='null',
+    refreshTokenUrl='null',
+    scopeUrl='openid profile email',
+    providerMetadataUri='null'
+  },
+  clientName='null',
+  providerMetadata=null
+}
+]
