@@ -48,6 +48,22 @@ public class OperatorUrls
     private String scopeUrl;
     private String providerMetadataUri;
 
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("OperatorUrls{");
+        sb.append("authorizationUrl='").append(authorizationUrl).append('\'');
+        sb.append(", requestTokenUrl='").append(requestTokenUrl).append('\'');
+        sb.append(", userInfoUrl='").append(userInfoUrl).append('\'');
+        sb.append(", premiumInfoUri='").append(premiumInfoUri).append('\'');
+        sb.append(", jwksUri='").append(jwksUri).append('\'');
+        sb.append(", revokeTokenUrl='").append(revokeTokenUrl).append('\'');
+        sb.append(", refreshTokenUrl='").append(refreshTokenUrl).append('\'');
+        sb.append(", scopeUrl='").append(scopeUrl).append('\'');
+        sb.append(", providerMetadataUri='").append(providerMetadataUri).append('\'');
+        sb.append('}');
+        return sb.toString();
+    }
+
     private OperatorUrls(Builder builder)
     {
         this.authorizationUrl = builder.authorizationUrl;

@@ -54,6 +54,26 @@ public class MobileConnectStatus
     private final IdentityResponse identityResponse;
     private final Exception exception;
 
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("MobileConnectStatus{");
+        sb.append("responseType=").append(responseType);
+        sb.append(", errorCode='").append(errorCode).append('\'');
+        sb.append(", errorMessage='").append(errorMessage).append('\'');
+        sb.append(", outcome='").append(outcome).append('\'');
+        sb.append(", url='").append(url).append('\'');
+        sb.append(", state='").append(state).append('\'');
+        sb.append(", nonce='").append(nonce).append('\'');
+        sb.append(", setCookie=").append(setCookie);
+        sb.append(", sdkSession='").append(sdkSession).append('\'');
+        sb.append(", discoveryResponse=").append(discoveryResponse);
+        sb.append(", requestTokenResponse=").append(requestTokenResponse);
+        sb.append(", identityResponse=").append(identityResponse);
+        sb.append(", exception=").append(exception);
+        sb.append('}');
+        return sb.toString();
+    }
+
     private MobileConnectStatus(final Builder builder)
     {
         this.responseType = builder.responseType;

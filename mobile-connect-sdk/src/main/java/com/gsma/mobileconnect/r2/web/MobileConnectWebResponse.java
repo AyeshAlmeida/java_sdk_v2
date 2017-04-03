@@ -47,6 +47,27 @@ public final class MobileConnectWebResponse
     private final String description;
     private final String outcome;
 
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("MobileConnectWebResponse{");
+        sb.append("status='").append(status).append('\'');
+        sb.append(", action='").append(action).append('\'');
+        sb.append(", clientName='").append(clientName).append('\'');
+        sb.append(", url='").append(url).append('\'');
+        sb.append(", sdkSession='").append(sdkSession).append('\'');
+        sb.append(", state='").append(state).append('\'');
+        sb.append(", nonce='").append(nonce).append('\'');
+        sb.append(", subscriberId='").append(subscriberId).append('\'');
+        sb.append(", token=").append(token);
+        sb.append(", tokenValidated=").append(tokenValidated);
+        sb.append(", identity='").append(identity).append('\'');
+        sb.append(", error='").append(error).append('\'');
+        sb.append(", description='").append(description).append('\'');
+        sb.append(", outcome='").append(outcome).append('\'');
+        sb.append('}');
+        return sb.toString();
+    }
+
     /**
      * Create instance of {@link MobileConnectWebResponse} copying all attributes from provided
      * {@link MobileConnectWebResponse}.

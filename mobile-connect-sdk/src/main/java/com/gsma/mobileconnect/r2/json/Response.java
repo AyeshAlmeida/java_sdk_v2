@@ -35,6 +35,20 @@ public class Response
     private final String clientSecret;
     private final String clientName;
 
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("Response{");
+        sb.append("servingOperator='").append(servingOperator).append('\'');
+        sb.append(", country='").append(country).append('\'');
+        sb.append(", currency='").append(currency).append('\'');
+        sb.append(", apis=").append(apis);
+        sb.append(", clientId='").append(clientId).append('\'');
+        sb.append(", clientSecret='").append(clientSecret).append('\'');
+        sb.append(", clientName='").append(clientName).append('\'');
+        sb.append('}');
+        return sb.toString();
+    }
+
     private Response(Builder builder)
     {
         this.servingOperator = builder.servingOperator;

@@ -52,6 +52,32 @@ public class AuthenticationOptions
     private final String claimsJson;
     private final ClaimsParameter claims;
 
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("AuthenticationOptions{");
+        sb.append("clientId='").append(clientId).append('\'');
+        sb.append(", redirectUrl=").append(redirectUrl);
+        sb.append(", acrValues='").append(acrValues).append('\'');
+        sb.append(", scope='").append(scope).append('\'');
+        sb.append(", nonce='").append(nonce).append('\'');
+        sb.append(", state='").append(state).append('\'');
+        sb.append(", maxAge=").append(maxAge);
+        sb.append(", display='").append(display).append('\'');
+        sb.append(", prompt='").append(prompt).append('\'');
+        sb.append(", uiLocales='").append(uiLocales).append('\'');
+        sb.append(", claimsLocales='").append(claimsLocales).append('\'');
+        sb.append(", idTokenHint='").append(idTokenHint).append('\'');
+        sb.append(", loginHint='").append(loginHint).append('\'');
+        sb.append(", dbts='").append(dbts).append('\'');
+        sb.append(", clientName='").append(clientName).append('\'');
+        sb.append(", context='").append(context).append('\'');
+        sb.append(", bindingMessage='").append(bindingMessage).append('\'');
+        sb.append(", claimsJson='").append(claimsJson).append('\'');
+        sb.append(", claims=").append(claims);
+        sb.append('}');
+        return sb.toString();
+    }
+
     private AuthenticationOptions(final Builder builder)
     {
         this.clientId = builder.clientId;

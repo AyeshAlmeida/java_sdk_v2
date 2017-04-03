@@ -50,6 +50,21 @@ public class DiscoveryResponse extends AbstractCacheable
     private final String clientName;
     private ProviderMetadata providerMetadata;
 
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("DiscoveryResponse{");
+        sb.append("ttl=").append(ttl);
+        sb.append(", responseCode=").append(responseCode);
+        sb.append(", headers=").append(headers);
+        sb.append(", errorResponse=").append(errorResponse);
+        sb.append(", responseData=").append(responseData);
+        sb.append(", operatorUrls=").append(operatorUrls);
+        sb.append(", clientName='").append(clientName).append('\'');
+        sb.append(", providerMetadata=").append(providerMetadata);
+        sb.append('}');
+        return sb.toString();
+    }
+
     private DiscoveryResponse(Builder builder)
     {
         this.ttl = builder.ttl;

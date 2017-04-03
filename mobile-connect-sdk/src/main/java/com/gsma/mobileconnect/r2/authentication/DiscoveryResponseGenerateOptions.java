@@ -16,6 +16,19 @@ public class DiscoveryResponseGenerateOptions {
     private List<String> linksList;
     private List<String> rel;
 
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("DiscoveryResponseGenerateOptions{");
+        sb.append("clientSecret='").append(clientSecret).append('\'');
+        sb.append(", subscriptionId='").append(subscriptionId).append('\'');
+        sb.append(", clientApplicationName='").append(clientApplicationName).append('\'');
+        sb.append(", clientKey='").append(clientKey).append('\'');
+        sb.append(", linksList=").append(linksList);
+        sb.append(", rel=").append(rel);
+        sb.append('}');
+        return sb.toString();
+    }
+
     private DiscoveryResponseGenerateOptions(final BuilderResponse builder) {
         this.clientSecret = builder.clientSecret;
         this.clientKey = builder.clientKey;

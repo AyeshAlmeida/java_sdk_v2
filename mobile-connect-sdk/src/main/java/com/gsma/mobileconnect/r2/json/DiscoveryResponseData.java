@@ -38,6 +38,20 @@ public class DiscoveryResponseData
     private String subscriberId;
     private String clientName;
 
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("DiscoveryResponseData{");
+        sb.append("ttl=").append(ttl);
+        sb.append(", error='").append(error).append('\'');
+        sb.append(", description='").append(description).append('\'');
+        sb.append(", links=").append(links);
+        sb.append(", response=").append(response);
+        sb.append(", subscriberId='").append(subscriberId).append('\'');
+        sb.append(", clientName='").append(clientName).append('\'');
+        sb.append('}');
+        return sb.toString();
+    }
+
     private DiscoveryResponseData(final Builder builder)
     {
         this.ttl = builder.ttl;

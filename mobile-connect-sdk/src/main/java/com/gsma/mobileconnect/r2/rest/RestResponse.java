@@ -36,6 +36,18 @@ public class RestResponse
     private final List<KeyValuePair> headers;
     private final String content;
 
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("RestResponse{");
+        sb.append("method='").append(method).append('\'');
+        sb.append(", uri=").append(uri);
+        sb.append(", statusCode=").append(statusCode);
+        sb.append(", headers=").append(headers);
+        sb.append(", content='").append(content).append('\'');
+        sb.append('}');
+        return sb.toString();
+    }
+
     private RestResponse(final Builder builder)
     {
         this.method = builder.method;

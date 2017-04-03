@@ -42,6 +42,19 @@ public class RequestTokenResponse
     private final ErrorResponse errorResponse;
     private final boolean tokenValidated;
 
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("RequestTokenResponse{");
+        sb.append("responseCode=").append(responseCode);
+        sb.append(", headers=").append(headers);
+        sb.append(", responseData=").append(responseData);
+        sb.append(", decodedIdTokenPayload='").append(decodedIdTokenPayload).append('\'');
+        sb.append(", errorResponse=").append(errorResponse);
+        sb.append(", tokenValidated=").append(tokenValidated);
+        sb.append('}');
+        return sb.toString();
+    }
+
     private RequestTokenResponse(Builder builder)
     {
         this.responseCode = builder.responseCode;

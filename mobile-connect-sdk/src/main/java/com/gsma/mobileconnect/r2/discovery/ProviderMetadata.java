@@ -80,6 +80,57 @@ public class ProviderMetadata extends AbstractCacheable
     private final SupportedVersions mobileConnectVersionSupported;
     private final List<String> loginHintMethodsSupported;
 
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("ProviderMetadata{");
+        sb.append("version='").append(version).append('\'');
+        sb.append(", subscriberId='").append(subscriberId).append('\'');
+        sb.append(", issuer='").append(issuer).append('\'');
+        sb.append(", authorizationEndpoint='").append(authorizationEndpoint).append('\'');
+        sb.append(", tokenEndpoint='").append(tokenEndpoint).append('\'');
+        sb.append(", userinfoEndpoint='").append(userinfoEndpoint).append('\'');
+        sb.append(", premiuminfoEndpoint='").append(premiuminfoEndpoint).append('\'');
+        sb.append(", checkSessionIframe='").append(checkSessionIframe).append('\'');
+        sb.append(", endSessionEndpoint='").append(endSessionEndpoint).append('\'');
+        sb.append(", revocationEndpoint='").append(revocationEndpoint).append('\'');
+        sb.append(", refreshEndpoint='").append(refreshEndpoint).append('\'');
+        sb.append(", registrationEndpoint='").append(registrationEndpoint).append('\'');
+        sb.append(", jwksUri='").append(jwksUri).append('\'');
+        sb.append(", scopesSupported=").append(scopesSupported);
+        sb.append(", responseTypesSupported=").append(responseTypesSupported);
+        sb.append(", responseModesSupported=").append(responseModesSupported);
+        sb.append(", grantTypesSupported=").append(grantTypesSupported);
+        sb.append(", acrValuesSupported=").append(acrValuesSupported);
+        sb.append(", subjectTypesSupported=").append(subjectTypesSupported);
+        sb.append(", userinfoSigningAlgValuesSupported=").append(userinfoSigningAlgValuesSupported);
+        sb.append(", userinfoEncryptionAlgValuesSupported=").append(userinfoEncryptionAlgValuesSupported);
+        sb.append(", userinfoEncryptionEncValuesSupported=").append(userinfoEncryptionEncValuesSupported);
+        sb.append(", idTokenSigningAlgValuesSupported=").append(idTokenSigningAlgValuesSupported);
+        sb.append(", idTokenEncryptionAlgValuesSupported=").append(idTokenEncryptionAlgValuesSupported);
+        sb.append(", idTokenEncryptionEncValuesSupported=").append(idTokenEncryptionEncValuesSupported);
+        sb.append(", requestObjectSigningAlgValuesSupported=").append(requestObjectSigningAlgValuesSupported);
+        sb.append(", requestObjectEncryptionAlgValuesSupported=").append(requestObjectEncryptionAlgValuesSupported);
+        sb.append(", requestObjectEncryptionEncValuesSupported=").append(requestObjectEncryptionEncValuesSupported);
+        sb.append(", tokenEndpointAuthMethodsSupported=").append(tokenEndpointAuthMethodsSupported);
+        sb.append(", tokenEndpointAuthSigningAlgValuesSupported=").append(tokenEndpointAuthSigningAlgValuesSupported);
+        sb.append(", displayValuesSupported=").append(displayValuesSupported);
+        sb.append(", claimTypesSupported=").append(claimTypesSupported);
+        sb.append(", claimsSupported=").append(claimsSupported);
+        sb.append(", serviceDocumentation='").append(serviceDocumentation).append('\'');
+        sb.append(", claimsLocalesSupported=").append(claimsLocalesSupported);
+        sb.append(", uiLocalesSupported=").append(uiLocalesSupported);
+        sb.append(", requireRequestUriRegistration=").append(requireRequestUriRegistration);
+        sb.append(", operatorPolicyUri='").append(operatorPolicyUri).append('\'');
+        sb.append(", operatorTermsOfServiceUri='").append(operatorTermsOfServiceUri).append('\'');
+        sb.append(", claimsParameterSupported=").append(claimsParameterSupported);
+        sb.append(", requestParameterSupported=").append(requestParameterSupported);
+        sb.append(", requestStringParameterSupported=").append(requestStringParameterSupported);
+        sb.append(", mobileConnectVersionSupported=").append(mobileConnectVersionSupported);
+        sb.append(", loginHintMethodsSupported=").append(loginHintMethodsSupported);
+        sb.append('}');
+        return sb.toString();
+    }
+
     private ProviderMetadata(Builder builder)
     {
         this.version = builder.version;

@@ -40,6 +40,20 @@ public class RequestTokenResponseData
     private final Date expiry;
     private final Long expiresIn;
 
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("RequestTokenResponseData{");
+        sb.append("timeReceived=").append(timeReceived);
+        sb.append(", accessToken='").append(accessToken).append('\'');
+        sb.append(", tokenType='").append(tokenType).append('\'');
+        sb.append(", idToken='").append(idToken).append('\'');
+        sb.append(", refreshToken='").append(refreshToken).append('\'');
+        sb.append(", expiry=").append(expiry);
+        sb.append(", expiresIn=").append(expiresIn);
+        sb.append('}');
+        return sb.toString();
+    }
+
     private RequestTokenResponseData(final Builder builder)
     {
         this.timeReceived = ObjectUtils.defaultIfNull(builder.timeReceived, new Date());
