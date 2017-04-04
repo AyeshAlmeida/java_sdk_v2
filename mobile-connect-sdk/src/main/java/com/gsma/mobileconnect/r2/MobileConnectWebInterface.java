@@ -16,9 +16,14 @@
  */
 package com.gsma.mobileconnect.r2;
 
-import com.gsma.mobileconnect.r2.authentication.*;
+import com.gsma.mobileconnect.r2.authentication.AuthenticationOptions;
+import com.gsma.mobileconnect.r2.authentication.IAuthenticationService;
+import com.gsma.mobileconnect.r2.authentication.RequestTokenResponse;
 import com.gsma.mobileconnect.r2.cache.CacheAccessException;
-import com.gsma.mobileconnect.r2.discovery.*;
+import com.gsma.mobileconnect.r2.discovery.DiscoveryOptions;
+import com.gsma.mobileconnect.r2.discovery.DiscoveryResponse;
+import com.gsma.mobileconnect.r2.discovery.IDiscoveryService;
+import com.gsma.mobileconnect.r2.discovery.OperatorUrls;
 import com.gsma.mobileconnect.r2.encoding.DefaultEncodeDecoder;
 import com.gsma.mobileconnect.r2.encoding.IMobileConnectEncodeDecoder;
 import com.gsma.mobileconnect.r2.identity.IIdentityService;
@@ -32,8 +37,8 @@ import org.slf4j.event.Level;
 
 import javax.servlet.http.HttpServletRequest;
 import java.net.URI;
-import java.net.URISyntaxException;
 import java.util.UUID;
+import java.util.concurrent.Future;
 
 /**
  * Convenience wrapper for Mobile Connect interfaces for use with web applications.
@@ -385,6 +390,20 @@ public class MobileConnectWebInterface
                     expectedState, expectedNonce, options);
             }
         });
+    }
+
+    public RequestTokenResponse getRequestTokenResponse(final String clientId,
+                                                        final String clientSecret,
+                                                        final URI requestTokenUrl,
+                                                        final URI redirectUrl, final String code)
+    {
+        try {
+            final Future<RequestTokenResponse> requestTokenResponseFuture = authnService.requestTokenAsync(
+                    clientId, clientSecret, requestTokenUrl, redirectUrl, code);
+            return requestTokenResponseFuture.get();
+        }catch (Exception e){
+            throw new RuntimeException("Exception Occurred : "+e);
+        }
     }
 
     /**
