@@ -397,11 +397,14 @@ public class MobileConnectWebInterface
                                                         final URI requestTokenUrl,
                                                         final URI redirectUrl, final String code)
     {
-        try {
-            final Future<RequestTokenResponse> requestTokenResponseFuture = authnService.requestTokenAsync(
-                    clientId, clientSecret, requestTokenUrl, redirectUrl, code);
-            return requestTokenResponseFuture.get();
-        }catch (Exception e){
+        try
+        {
+            final Future<RequestTokenResponse> requestTokenResponseFuture = authnService.
+                    requestTokenAsync(clientId, clientSecret, requestTokenUrl, redirectUrl, code);
+            return (RequestTokenResponse) requestTokenResponseFuture.get();
+        }
+        catch (Exception e)
+        {
             throw new RuntimeException("Exception Occurred : "+e);
         }
     }
